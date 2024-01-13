@@ -1,31 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="en" class="no-js">
-    <!-- BEGIN HEAD -->
-    <head>
-        <meta charset="utf-8"/>
-        <title>Eye.code</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="" name="description"/>
-        <meta content="" name="author"/>
+    
+    <div th:replace="~{components/header}"/>
 
-        <!-- GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- PAGE LEVEL PLUGIN STYLES -->
-        <link href="css/animate.css" rel="stylesheet">
-        <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- THEME STYLES -->
-        <link href="css/layout.css" rel="stylesheet" type="text/css"/>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
-    </head>
-    <!-- END HEAD -->
 
     <!-- BODY -->
     <body class="modoClaro modoEscuro">
@@ -315,61 +293,8 @@
         <!-- End Team -->
         <!--========== END PAGE LAYOUT ==========-->
 
-        <!--========== FOOTER ==========-->
-        <footer class="footer">
-            <!-- Links -->
-            <div class="footer-seperator">
-                <div class="content-lg container">
-                    <div class="row">
-                        <div class="col-sm-2 sm-margin-b-50">
-                            <!-- List -->
-                            <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a class="footer-list-link" href="home">Home</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="sobre">Sobre</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="cursos">Cursos</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="opcoes">Opções</a></li>
-                            </ul>
-                            <!-- End List -->
-                        </div>
-                        <div class="col-sm-4 sm-margin-b-30">
-                            <!-- List -->
-                            <ul class="list-unstyled footer-list">
-                            <li class="footer-list-item"><a class="footer-list-link" href="https://www.linkedin.com/in/enzo-chiaramonte/?originalSubdomain=br" target="_blank">Linkedin Enzo</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="https://www.linkedin.com/in/gabriel-cavalieri-788a14236/" target="_blank">Linkedin Gabriel</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="https://www.linkedin.com/in/fl%C3%A1vio-alexandre-barbosa-14465ba7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin Flávio</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="https://www.linkedin.com/in/bruno-vilhena-ribeiro/" target="_blank">Linkedin Bruno</a></li>
-                            </ul>
-                            <!-- End List -->
-                        </div>
-                        <div class="col-sm-5 sm-margin-b-30">
-                            <h2 class="color-white">Entre em Contato</h2>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Nome" required>
-                            <input type="email" class="form-control footer-input margin-b-20" placeholder="Email" required>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Telefone" required>
-                            <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Mensagem" required></textarea>
-                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Enviar</button>
-                        </div>
-                    </div>
-                    <!--// end row -->
-                </div>
-            </div>
-            <!-- End Links -->
+        <div th:replace="~{components/footer}"/>
 
-            <!-- Copyright -->
-            <div class="content container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h2 class="texto1">EYE.CODE</h2>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p class="margin-b-0"><a class="color-base fweight-700">EYE.CODE</a> Desenvolvido por: <a class="color-base fweight-700">Squad 04</a></p>
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-            <!-- End Copyright -->
-        </footer>
-        <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->
         <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>

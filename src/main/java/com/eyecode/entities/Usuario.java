@@ -9,8 +9,8 @@ import jakarta.persistence.Id;
 @Entity
 
 public class Usuario {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String login;
@@ -20,7 +20,6 @@ public class Usuario {
 	private String deficiencia;
 	@Column(columnDefinition = "TEXT")
 	private String preferencia;
-	
 	
 	public Usuario() {
 		
