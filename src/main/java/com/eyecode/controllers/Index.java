@@ -1,11 +1,24 @@
 package com.eyecode.controllers;
 
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.eyecode.entities.Course;
+import com.eyecode.repositories.CourseRepository;
 
 @Controller 
 public class Index {
+	
+	@Autowired
+	CourseRepository courseRepository; 
 	
 	@GetMapping("/home")
 	public String home() {
@@ -18,8 +31,13 @@ public class Index {
 	}
 	
 	@GetMapping("/cursos")
-	public String cursos() {
-		return "cursos";
+	public ModelAndView cursos() {
+		
+		ModelAndView page = new ModelAndView("/cursos");
+		
+		page.addObject("courses",courseRepository.findAll()); 
+		
+		return page;
 	}
 	
 	
