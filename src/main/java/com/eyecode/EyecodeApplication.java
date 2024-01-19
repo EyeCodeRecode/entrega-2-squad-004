@@ -48,6 +48,7 @@ public class EyecodeApplication {
 		user.setEmail("Cristianascimento@gmail.com");
 		user.setName("Cristian");
 		user.setPassword("password");
+		user.setDeficiency("Não possuí");
 		
 		ArrayList<Role> roles = new ArrayList<>();
 		

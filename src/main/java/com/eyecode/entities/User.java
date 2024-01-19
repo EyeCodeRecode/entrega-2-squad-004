@@ -26,6 +26,8 @@ public class User {
 	private String name;
 	
 	private String password;
+	
+	private String deficiency;
 		
 	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role" ,
@@ -73,7 +75,16 @@ public class User {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getDeficiency() {
+		return deficiency;
+	}
+
+	public void setDeficiency(String deficiency) {
+		this.deficiency = deficiency;
 	} 
+
 
 	
 }
