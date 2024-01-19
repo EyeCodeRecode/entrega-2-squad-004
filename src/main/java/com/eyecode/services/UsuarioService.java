@@ -2,16 +2,16 @@ package com.eyecode.services;
 
 import java.util.List;
 
-import com.eyecode.entities.Usuario;
+import com.eyecode.entities.User;
 
 public interface UsuarioService {
-	List<Usuario> getAllUsuarios ();
+	List<User> getAllUsuarios ();
 	
-	Usuario getUsuarioById (Long id);
+	User getUsuarioById (Long id);
 	
-	Usuario saveUsuario (Usuario usuario);
+	User saveUsuario (User usuario);
 	
-	Usuario updateUsuario (Long id, Usuario usuarioAtualizado);
+	User updateUsuario (Long id, User usuarioAtualizado);
 	
 	void deleteUsuario (long id);
 

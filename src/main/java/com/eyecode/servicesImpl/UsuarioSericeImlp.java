@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.eyecode.entities.Usuario;
-import com.eyecode.repositories.UsuarioRepository;
+import com.eyecode.entities.User;
+import com.eyecode.repositories.UserRepository;
 import com.eyecode.services.UsuarioService;
 
 
@@ -18,30 +18,30 @@ import com.eyecode.services.UsuarioService;
 public class UsuarioSericeImlp implements UsuarioService{
 
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private UserRepository usuarioRepository;
 	
 	@Override
-	public List<Usuario> getAllUsuarios() {
+	public List<User> getAllUsuarios() {
 		return usuarioRepository.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Usuario getUsuarioById(Long id) {
+	public User getUsuarioById(Long id) {
 	return usuarioRepository.findById (id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public Usuario saveUsuario(Usuario usuario) {
+	public User saveUsuario(User usuario) {
 		return usuarioRepository.save(usuario);
 	}
 
 	@Override
-	public Usuario updateUsuario(Long id, Usuario usuarioAtualizado) {
-		Usuario usuarioExistente = usuarioRepository.findById(id).orElse(null);
+	public User updateUsuario(Long id, User usuarioAtualizado) {
+		User usuarioExistente = usuarioRepository.findById(id).orElse(null);
 		if (usuarioExistente != null) {
-		usuarioExistente.setNome(usuarioAtualizado.getNome());
+		usuarioExistente.setName(usuarioAtualizado.getName());
 		return usuarioRepository.save(usuarioExistente);
 	} else {
 		throw new RuntimeException("Usuário com o ID" + id +  "não encontrado!");

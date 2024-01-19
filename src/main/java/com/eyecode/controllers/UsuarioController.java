@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.eyecode.entities.Usuario;
+import com.eyecode.entities.User;
 import com.eyecode.services.UsuarioService;
 import org.springframework.ui.Model;
 
@@ -24,7 +24,7 @@ public class UsuarioController {
 
 	@GetMapping
 	public String listUsuarios (Model model) {
-		List<Usuario> Usuarios = usuarioService.getAllUsuarios();
+		List<User> Usuarios = usuarioService.getAllUsuarios();
 		model.addAttribute("usuarios", Usuarios);
 		return "ListarUsuarios";
 	}
@@ -32,14 +32,14 @@ public class UsuarioController {
 	//FORMULÁRIO DE CRIAÇÃO
 	@GetMapping ("/novo")
 	public String showFormForadd(Model model) {
-		Usuario usuario = new Usuario ();
+		User usuario = new User ();
 		model.addAttribute ("usuario", usuario);
 		return "usuarioForm";
 	}
 
 //PERSISTENCIA DA CRIAÇÃO
 	@PostMapping ("/save")
-	public String saveUsuario (@ModelAttribute("usuario") Usuario usuario) {
+	public String saveUsuario (@ModelAttribute("usuario") User usuario) {
 		usuarioService.saveUsuario(usuario);
 		return "redirect:/usuarios";
 	}
@@ -47,23 +47,17 @@ public class UsuarioController {
 
 	@GetMapping("/editar/{id}") 
 	public String exibirFormularioEdicao(@PathVariable("id") Long userId, Model model) {
-	    Usuario usuario = usuarioService.getUsuarioById(userId);
+	    User usuario = usuarioService.getUsuarioById(userId);
 	    model.addAttribute("usuario", usuario);
 	    return "usuarioForm"; 
 	}
 
 
 	@PostMapping("/editar/{id}")
-	public String editUser(@PathVariable("id") Long userId, @ModelAttribute("usuario") Usuario usuario) {
-	    Usuario usuarioExistente = usuarioService.getUsuarioById(userId);
+	public String editUser(@PathVariable("id") Long userId, @ModelAttribute("usuario") User usuario) {
+	    User usuarioExistente = usuarioService.getUsuarioById(userId);
 	
-	    usuarioExistente.setNome(usuario.getNome());
-	    usuarioExistente.setLogin(usuario.getLogin());
-	    usuarioExistente.setSenha(usuario.getSenha());
-	    usuarioExistente.setEmail(usuario.getEmail());
-	    usuarioExistente.setDeficiencia(usuario.getDeficiencia());
-	    usuarioExistente.setPreferencia(usuario.getPreferencia());
-	
+	   
 	    usuarioService.updateUsuario(userId, usuarioExistente); 
 	
 	    return "redirect:/usuarios"; 

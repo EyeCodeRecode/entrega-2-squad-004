@@ -3,9 +3,9 @@ package com.eyecode.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.eyecode.entities.Usuario;
+import com.eyecode.entities.User;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+public interface UserRepository extends JpaRepository<User, Long>{
 
 }

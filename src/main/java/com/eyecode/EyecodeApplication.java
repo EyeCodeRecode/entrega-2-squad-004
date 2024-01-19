@@ -16,8 +16,11 @@ import org.springframework.util.StreamUtils;
 
 import com.eyecode.entities.Contact;
 import com.eyecode.entities.Course;
+import com.eyecode.entities.Role;
+import com.eyecode.entities.User;
 import com.eyecode.repositories.ContactRepository;
 import com.eyecode.repositories.CourseRepository;
+import com.eyecode.repositories.UserRepository;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
@@ -32,9 +35,28 @@ public class EyecodeApplication {
 	@Autowired
 	CourseRepository repository;
 	
+	@Autowired
+	UserRepository userRepository;
+	
 	
 	@PostConstruct
 	public void importSql() {
+		
+		
+		User user = new User();
+		
+		user.setEmail("Cristianascimento@gmail.com");
+		user.setName("Cristian");
+		user.setPassword("password");
+		
+		ArrayList<Role> roles = new ArrayList<>();
+		
+		roles.add(new Role("ADMIM"));
+		
+		user.setRoles(roles);
+		
+		userRepository.save(user);
+		
 			
 		String[] listName = {"Html.png" ,"Css.png","js.png","java.png","bd.png","phyton.png"}; 
 		List<byte[]> listImgs = new ArrayList<byte[]>();
@@ -111,6 +133,13 @@ public class EyecodeApplication {
 					listImgs.get(5)
 
 			));		
+		
+		userRepository.findAll().forEach(item ->{
+			System.out.print(
+					"\n" + item.getName() +
+					"\n" + item.getRoles().get(0).getAuthority()
+					);
+		});
 		
 	}
 	
