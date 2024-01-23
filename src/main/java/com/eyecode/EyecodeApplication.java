@@ -25,7 +25,7 @@ import com.eyecode.repositories.UserRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 
-@SpringBootApplication
+@SpringBootApplication( )
 public class EyecodeApplication {
 
 	public static void main(String[] args) {
@@ -46,19 +46,21 @@ public class EyecodeApplication {
 		User user = new User();
 		
 		user.setEmail("Cristianascimento@gmail.com");
-		user.setName("Cristian");
-		user.setPassword("password");
+		user.setName("Fulano");
+		//A senha é "password"
+		user.setPassword("$2y$10$qnQvSDDAws3phToeXfLDS.fgIghxBfvnb9QcDrSDLh6blQ2zKe6K2");
 		user.setDeficiency("Não possuí");
 		
 		ArrayList<Role> roles = new ArrayList<>();
 		
-		roles.add(new Role("ADMIM"));
+		roles.add(new Role("ADMIN"));
 		
 		user.setRoles(roles);
 		
-		userRepository.save(user);
 		
-			
+		userRepository.save(user);
+				
+		
 		String[] listName = {"Html.png" ,"Css.png","js.png","java.png","bd.png","phyton.png"}; 
 		List<byte[]> listImgs = new ArrayList<byte[]>();
 		

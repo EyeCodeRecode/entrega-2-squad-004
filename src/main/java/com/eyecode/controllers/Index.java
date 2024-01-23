@@ -94,10 +94,6 @@ public class Index {
 		return "pagcurso6";
 	}
 	
-	@GetMapping("/listarUsuarios")
-	public String lisingUser() {
-		return "ListarUsuarios";
-	}
 
 }
 
