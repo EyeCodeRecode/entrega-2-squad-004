@@ -23,6 +23,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration 
 @EnableWebSecurity
@@ -35,15 +36,11 @@ public class SpringSecurityConfig {
 	@Bean
 	InMemoryUserDetailsManager detailsManager() {
 		
-		UserBuilder users = org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder();
-		
-		UserDetails user = users
-			.username("Cristian")
-			.password("password")
-			.roles("USER","ADMIN")
-			.build();
-		
-		return new InMemoryUserDetailsManager(user); 
+	    UserDetails user = org.springframework.security.core.userdetails.User.withUsername("Cristian")
+	    	      .password(passwordEncoder().encode("password"))
+	    	      .roles("USER","ADMIN")
+	    	      .build();
+	    	    return new InMemoryUserDetailsManager(user);
 	}
 	
 	
@@ -51,9 +48,14 @@ public class SpringSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       
 		http
-       		.authorizeHttpRequests(authorize -> authorize	
-                .requestMatchers("/usuarios","/pagcurso")
+			.csrf( csrf -> csrf.disable() );
+		
+		http
+       		.authorizeHttpRequests((authorize) -> authorize	
+                .requestMatchers("/usuarios")
                 .hasRole("ADMIN")
+                .requestMatchers("/cursos/*")
+                .hasRole("USER")
                 .anyRequest()
                 .permitAll()
             );
@@ -61,12 +63,15 @@ public class SpringSecurityConfig {
     	http
 			.formLogin(Customizer.withDefaults());   
     	
+    	http
+    		.logout( logout -> logout.logoutRequestMatcher( new AntPathRequestMatcher("/logout") ).permitAll() );  
+    	
     	
         return http.build();
     }
 	
 	@Autowired
-	private void configGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	private void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
 	

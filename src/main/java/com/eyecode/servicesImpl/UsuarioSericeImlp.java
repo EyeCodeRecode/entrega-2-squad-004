@@ -63,12 +63,14 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
 		User user = usuarioRepository.findByName(username);
+		System.out.print("\n - " + user.getName() );
 		
 		if(user != null) {
 			return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(),
 					mapRolesToAuthorities(user.getRoles()));
 		} else {
 			throw new UsernameNotFoundException("Usuário não encontrado");
+
 		}
 		
 	}

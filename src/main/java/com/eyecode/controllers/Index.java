@@ -30,16 +30,6 @@ public class Index {
 		return "sobre";
 	}
 	
-	@GetMapping("/cursos")
-	public ModelAndView cursos() {
-		
-		ModelAndView page = new ModelAndView("/cursos");
-		
-		page.addObject("courses",courseRepository.findAll()); 
-		
-		return page;
-	}
-	
 	
 	@GetMapping("/opcoes")
 	public String opcoes() {
