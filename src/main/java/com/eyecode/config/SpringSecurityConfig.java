@@ -32,7 +32,7 @@ public class SpringSecurityConfig {
 	@Autowired
 	UserDetailsService  userDetailsService;
 	
-	
+	/*
 	@Bean
 	InMemoryUserDetailsManager detailsManager() {
 		
@@ -41,29 +41,23 @@ public class SpringSecurityConfig {
 	    	      .roles("USER","ADMIN")
 	    	      .build();
 	    	    return new InMemoryUserDetailsManager(user);
-	}
+	}*/
 	
 	
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       
 		http
-			.csrf( csrf -> csrf.disable() );
-		
-		http
+			.csrf( csrf -> csrf.disable() )
        		.authorizeHttpRequests((authorize) -> authorize	
-                .requestMatchers("/usuarios")
+                .requestMatchers("/usuarios/**")
                 .hasRole("ADMIN")
                 .requestMatchers("/cursos/*")
-                .hasRole("USER")
+                .hasAnyRole("ADMIN","USER")
                 .anyRequest()
                 .permitAll()
-            );
-			
-    	http
-			.formLogin(Customizer.withDefaults());   
-    	
-    	http
+            )
+			.formLogin(Customizer.withDefaults())  
     		.logout( logout -> logout.logoutRequestMatcher( new AntPathRequestMatcher("/logout") ).permitAll() );  
     	
     	

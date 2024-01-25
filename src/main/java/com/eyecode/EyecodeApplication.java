@@ -53,7 +53,8 @@ public class EyecodeApplication {
 		
 		ArrayList<Role> roles = new ArrayList<>();
 		
-		roles.add(new Role("ADMIN"));
+		roles.add(new Role("ROLE_ADMIN"));
+		roles.add(new Role("ROLE_USER"));
 		
 		user.setRoles(roles);
 		
