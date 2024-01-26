@@ -57,6 +57,7 @@ public class EyecodeApplication {
 		user.setRoles(roles);
 		
 		userRepository.save(user);
+	
 		
-			
+	}
 }
