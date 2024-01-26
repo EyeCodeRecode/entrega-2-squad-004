@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eyecode</groupId>
-	<artifactId>Tarefas</artifactId>
+	<artifactId>eyecode</artifactId>
 	<version>1.0</version>
 	<name>eyecode</name>
 	<description>Esse projeto tem por objetivo controlar minhas tarefas</description>
