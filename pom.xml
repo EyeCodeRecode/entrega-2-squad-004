@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eyecode</groupId>
-	<artifactId>eyecode</artifactId>
+	<artifactId>entrega-2-squad-004</artifactId>
 	<version>1.0</version>
-	<name>eyecode</name>
+	<name>entrega-2-squad-004</name>
 	<description>Esse projeto tem por objetivo controlar minhas tarefas</description>
 	<properties>
 		<java.version>17</java.version>
