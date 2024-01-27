@@ -19,7 +19,7 @@ public class Role {
 	private String authority;
 	
 	@ManyToMany(mappedBy = "roles")
-	private List<User> users = new ArrayList<>();
+	private List<Usuario> users = new ArrayList<>();
 
 	
 	public Role() {
@@ -51,12 +51,12 @@ public class Role {
 	}
 
 
-	public List<User> getUsuarios() {
+	public List<Usuario> getUsuarios() {
 		return users;
 	}
 
 
-	public void setUsuarios(List<User> users) {
+	public void setUsuarios(List<Usuario> users) {
 		this.users = users;
 	}
 	

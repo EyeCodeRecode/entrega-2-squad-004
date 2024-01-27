@@ -17,7 +17,7 @@ import org.springframework.util.StreamUtils;
 import com.eyecode.entities.Contact;
 import com.eyecode.entities.Course;
 import com.eyecode.entities.Role;
-import com.eyecode.entities.User;
+import com.eyecode.entities.Usuario;
 import com.eyecode.repositories.ContactRepository;
 import com.eyecode.repositories.CourseRepository;
 import com.eyecode.repositories.UserRepository;
@@ -43,12 +43,12 @@ public class EyecodeApplication {
 	public void importSql() {
 		
 		
-		User user = new User();
+		Usuario user = new Usuario();
 		
 		user.setEmail("Cristianascimento@gmail.com");
-		user.setName("Cristian");
-		user.setPassword("password");
-		user.setDeficiency("Não possuí");
+		user.setNome("Cristian");
+		user.setSenha("password");
+		user.setDeficiencia("Não possuí");
 		
 		ArrayList<Role> roles = new ArrayList<>();
 		

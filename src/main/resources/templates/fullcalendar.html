@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FullCalendar by Creative Tim </title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="vendor2/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor2/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor2/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor2/quill/quill.snow.css" rel="stylesheet">
+<link href="vendor2/quill/quill.bubble.css" rel="stylesheet">
+<link href="vendor2/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor2/simple-datatables/style.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
+<link href='css/fullcalendar.css' rel='stylesheet' />
+<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='js/jquery-1.10.2.js' type="text/javascript"></script>
+<script src='js/jquery-ui.custom.min.js' type="text/javascript"></script>
+<script src='js/fullcalendar.js' type="text/javascript"></script>
+</head>
+<!-- ======= Header ======= -->
+<body class="modoClaro modoEscuro">
+<header id="header" class="header fixed-top d-flex align-items-center modoClaro modoEscuro">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="indexperfil" class="logo d-flex align-items-center">  
+        <span class="d-none d-lg-block modoClaro modoEscuro">EYE.CODE</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn modoClaro modoEscuro"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar modoClaro modoEscuro">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto modoClaro modoEscuro">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none modoClaro modoEscuro ">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon modoClaro modoEscuro" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications modoClaro modoEscuro">
+            <li class="dropdown-header modoClaro modoEscuro">
+              Você tem 4 notificações 
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div class="modoClaro modoEscuro">
+                <h4 class="modoClaro modoEscuro">CUIDADO</h4>
+                <p class="modoClaro modoEscuro">Você possuí atividades pendentes a entrega </p>
+                <p class="modoClaro modoEscuro">30 min. atrás</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div class="modoClaro modoEscuro">
+                <h4 class="modoClaro modoEscuro">ERRO 651</h4>
+                <p class="modoClaro modoEscuro">Houve um erro ao enviar sua atividade, prolema de conexão</p>
+                <p class="modoClaro modoEscuro">1 hr. atrás</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div class="modoClaro modoEscuro">
+                <h4 class="modoClaro modoEscuro">Sucesso</h4>
+                <p class="modoClaro modoEscuro">A entrega do projeto 2 foi enviada</p>
+                <p class="modoClaro modoEscuro">2 hrs. atrás</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div class="modoClaro modoEscuro">
+                <h4 class="modoClaro modoEscuro">Dica</h4>
+                <p class="modoClaro modoEscuro">Fique sempre atento aos prazos no calendario</p>
+                <p class="modoClaro modoEscuro">4 hrs. atrás</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a class="modoClaro modoEscuro" href="#">Mostrar todas as notificações</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown modoClaro modoEscuro	">
+
+          <a class="nav-link nav-icon modoClaro modoEscuro" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages modoClaro modoEscuro">
+            <li class="dropdown-header modoClaro modoEscuro">
+              Você tem 3 novas mensagens 
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item modoClaro modoEscuro">
+              <a href="#">
+                <img src="img/usuario/Gabriel.jpeg" alt="" class="rounded-circle">
+                <div class="modoClaro modoEscuro">
+                  <h4 class="modoClaro modoEscuro">Gabriel</h4>
+                  <p class="modoClaro modoEscuro">"Preciso de orientação sobre a integração de bancos de dados em projetos acessíveis. Alguma dica para superar desafios? Vamos compartilhar experiências!"</p>
+                  <p class="modoClaro modoEscuro">4 hrs. atrás</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item modoClaro modoEscuro">
+              <a href="#">
+                <img src="img/usuario/Lucas.jpeg" alt="" class="rounded-circle">
+                <div class="modoClaro modoEscuro">
+                  <h4 class="modoClaro modoEscuro">Lucas</h4>
+                  <p class="modoClaro modoEscuro">"Dúvidas na programação orientada a objetos para pessoas com deficiência visual. Sugestões de recursos adicionais? Agradeço pela ajuda!"</p>
+                  <p class="modoClaro modoEscuro">6 hrs. atrás</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item modoClaro modoEscuro">
+              <a href="#">
+                <img src="img/usuario/Henrique.jpeg" alt="" class="rounded-circle">
+                <div class="modoClaro modoEscuro">
+                  <h4 class="modoClaro modoEscuro">Henrique</h4>
+                  <p class="modoClaro modoEscuro">"Como garantir a acessibilidade na programação web? Sugestões de boas práticas ou ferramentas específicas? Agradeço desde já!"</p>
+                  <p class="modoClaro modoEscuro">8 hrs. atrás</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer modoClaro modoEscuro">
+              <a href="#">Mostrar todas as mensagens</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="img/usuario/Enzo.jpeg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2 modoClaro modoEscuro">E. Chiaramonte</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile modoClaro modoEscuro">
+            <li class="dropdown-header modoClaro modoEscuro">
+              <h6 class="modoClaro modoEscuro">Enzo Chiaramonte</h6>
+              <span class="modoClaro modoEscuro">Fullstack</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center modoClaro modoEscuro" href="users-profile">
+                <i class="bi bi-person modoClaro modoEscuro"></i>
+                <span>Meu perfil</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center modoClaro modoEscuro" href="users-profile">
+                <i class="bi bi-gear modoClaro modoEscuro"></i>
+                <span>Configurações do perfil</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center modoClaro modoEscuro" href="pages-faq">
+                <i class="bi bi-question-circle modoClaro modoEscuro"></i>
+                <span>Ajuda</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center modoClaro modoEscuro" href="#">
+                <i class="bi bi-box-arrow-right modoClaro modoEscuro"></i>
+                <span>Sair da conta</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar modoClaro modoEscuro">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item modoClaro modoEscuro">
+        <a class="nav-link collapsed modoClaro modoEscuro" href="indexperfil">
+          <i class="bi bi-grid modoClaro modoEscuro"></i>
+          <span>Home</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">Paginas</li>
+
+      <li class="nav-item modoClaro modoEscuro">
+        <a class="nav-link modoClaro modoEscuro" href="users-profile">
+          <i class="bi bi-person modoClaro modoEscuro"></i>
+          <span>Perfil</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item modoClaro modoEscuro">
+        <a class="nav-link collapsed modoClaro modoEscuro" href="pages-faq">
+          <i class="bi bi-question-circle modoClaro modoEscuro"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item modoClaro modoEscuro">
+        <a class="nav-link collapsed modoClaro modoEscuro" href="fullcalendar">
+          <i class="bi bi-calendar-date modoClaro modoEscuro"></i>
+          <span>Calendário</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="modoClaro modoEscuro" href="fullcalendar">Home</a></li>
+          <li class="breadcrumb-item active modoClaro modoEscuro">Calendário</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    
+
+           
+<script>
+
+	$(document).ready(function() {
+	    var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+
+		/*  className colors
+
+		className: default(transparent), important(red), chill(pink), success(green), info(blue)
+
+		*/
+
+
+		/* initialize the external events
+		-----------------------------------------------------------------*/
+
+		$('#external-events div.external-event').each(function() {
+
+			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+			// it doesn't need to have a start or end
+			var eventObject = {
+				title: $.trim($(this).text()) // use the element's text as the event title
+			};
+
+			// store the Event Object in the DOM element so we can get to it later
+			$(this).data('eventObject', eventObject);
+
+			// make the event draggable using jQuery UI
+			$(this).draggable({
+				zIndex: 999,
+				revert: true,      // will cause the event to go back to its
+				revertDuration: 0  //  original position after the drag
+			});
+
+		});
+
+
+		/* initialize the calendar
+		-----------------------------------------------------------------*/
+
+		var calendar =  $('#calendar').fullCalendar({
+			header: {
+				left: 'title',
+				center: 'agendaDay,agendaWeek,month',
+				right: 'prev,next today'
+			},
+			editable: true,
+			firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+			selectable: true,
+			defaultView: 'month',
+
+			axisFormat: 'h:mm',
+			columnFormat: {
+                month: 'ddd',    // Mon
+                week: 'ddd d', // Mon 7
+                day: 'dddd M/d',  // Monday 9/7
+                agendaDay: 'dddd d'
+            },
+            titleFormat: {
+                month: 'MMMM yyyy', // September 2009
+                week: "MMMM yyyy", // September 2009
+                day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+            },
+			allDaySlot: false,
+			selectHelper: true,
+			select: function(start, end, allDay) {
+				var title = prompt('Event Title:');
+				if (title) {
+					calendar.fullCalendar('renderEvent',
+						{
+							title: title,
+							start: start,
+							end: end,
+							allDay: allDay
+						},
+						true // make the event "stick"
+					);
+				}
+				calendar.fullCalendar('unselect');
+			},
+			droppable: true, // this allows things to be dropped onto the calendar !!!
+			drop: function(date, allDay) { // this function is called when something is dropped
+
+				// retrieve the dropped element's stored Event Object
+				var originalEventObject = $(this).data('eventObject');
+
+				// we need to copy it, so that multiple events don't have a reference to the same object
+				var copiedEventObject = $.extend({}, originalEventObject);
+
+				// assign it the date that was reported
+				copiedEventObject.start = date;
+				copiedEventObject.allDay = allDay;
+
+				// render the event on the calendar
+				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+				// is the "remove after drop" checkbox checked?
+				if ($('#drop-remove').is(':checked')) {
+					// if so, remove the element from the "Draggable Events" list
+					$(this).remove();
+				}
+
+			},
+
+			events: [
+				{
+					title: 'All Day Event',
+					start: new Date(y, m, 1)
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: new Date(y, m, d-3, 16, 0),
+					allDay: false,
+					className: 'info'
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: new Date(y, m, d+4, 16, 0),
+					allDay: false,
+					className: 'info'
+				},
+				{
+					title: 'Meeting',
+					start: new Date(y, m, d, 10, 30),
+					allDay: false,
+					className: 'important'
+				},
+				{
+					title: 'Lunch',
+					start: new Date(y, m, d, 12, 0),
+					end: new Date(y, m, d, 14, 0),
+					allDay: false,
+					className: 'important'
+				},
+				{
+					title: 'Birthday Party',
+					start: new Date(y, m, d+1, 19, 0),
+					end: new Date(y, m, d+1, 22, 30),
+					allDay: false,
+				},
+				{
+					title: 'Click for Google',
+					start: new Date(y, m, 28),
+					end: new Date(y, m, 29),
+					url: 'http://google.com/',
+					className: 'success'
+				}
+			],
+		});
+
+
+	});
+
+</script>
+<style>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
+		background-color: #DDDDDD;
+		}
+
+	#wrap {
+		width: 1100px;
+		margin: 0 auto;
+		}
+
+	#external-events {
+		float: left;
+		width: 150px;
+		padding: 0 10px;
+		text-align: left;
+		}
+
+	#external-events h4 {
+		font-size: 16px;
+		margin-top: 0;
+		padding-top: 1em;
+		}
+
+	.external-event { /* try to mimick the look of a real event */
+		margin: 10px 0;
+		padding: 2px 4px;
+		background: #3366CC;
+		color: #fff;
+		font-size: .85em;
+		cursor: pointer;
+		}
+
+	#external-events p {
+		margin: 1.5em 0;
+		font-size: 11px;
+		color: #666;
+		}
+
+	#external-events p input {
+		margin: 0;
+		vertical-align: middle;
+		}
+
+	#calendar {
+/* 		float: right; */
+        margin: 0 auto;
+		width: 900px;
+		background-color: #FFFFFF;
+		  border-radius: 6px;
+        box-shadow: 0 1px 2px #C3C3C3;
+		}
+
+</style>
+</head>
+
+<div id='wrap'>
+
+<div id='calendar'></div>
+
+<div style='clear:both'></div>
+</div>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>EYE.CODE</span></strong>. All Rights Reserved
+    </div>
+    
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Acessibilidade -->
+        <script th:src="@{/js/acessibilidade.js}" type="text/javascript"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor2/apexcharts/apexcharts.min.js"></script>
+  <script src="vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor2/chart.js/chart.umd.js"></script>
+  <script src="vendor2/echarts/echarts.min.js"></script>
+  <script src="vendor2/quill/quill.min.js"></script>
+  <script src="vendor2/simple-datatables/simple-datatables.js"></script>
+  <script src="vendor2/tinymce/tinymce.min.js"></script>
+  <script src="vendor2/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
