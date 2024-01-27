@@ -46,7 +46,7 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	public User updateUsuario(Long id, User usuarioAtualizado) {
 		User usuarioExistente = usuarioRepository.findById(id).orElse(null);
 		if (usuarioExistente != null) {
-		usuarioExistente.setName(usuarioAtualizado.getName());
+		usuarioExistente.setNome(usuarioAtualizado.getNome());
 		return usuarioRepository.save(usuarioExistente);
 	} else {
 		throw new RuntimeException("Usuário com o ID" + id +  "não encontrado!");
@@ -63,10 +63,10 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
 		User user = usuarioRepository.findByName(username);
-		System.out.print("\n - " + user.getName() );
+		System.out.print("\n - " + user.getNome() );
 		
 		if(user != null) {
-			return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(),
+			return new org.springframework.security.core.userdetails.User(user.getNome(), user.getSenha(),
 					mapRolesToAuthorities(user.getRoles()));
 		} else {
 			throw new UsernameNotFoundException("Usuário não encontrado");

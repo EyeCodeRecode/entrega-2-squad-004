@@ -46,10 +46,10 @@ public class EyecodeApplication {
 		User user = new User();
 		
 		user.setEmail("Cristianascimento@gmail.com");
-		user.setName("Fulano");
+		user.setNome("Fulano");
 		//A senha é "password"
 		user.setPassword("$2y$10$qnQvSDDAws3phToeXfLDS.fgIghxBfvnb9QcDrSDLh6blQ2zKe6K2");
-		user.setDeficiency("Não possuí");
+		user.setDeficiencia("Não possuí");
 		
 		ArrayList<Role> roles = new ArrayList<>();
 		
@@ -58,7 +58,7 @@ public class EyecodeApplication {
 		
 		user.setRoles(roles);
 		
-		if( userRepository.findByName(user.getName()) == null ){
+		if( userRepository.findByName(user.getNome()) == null ){
 			userRepository.save(user);
 
 		}
