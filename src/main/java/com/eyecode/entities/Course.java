@@ -30,21 +30,21 @@ public class Course {
 	@Column
 	private String type;
 	
-	@Lob
-	@Column(columnDefinition = "LONGBLOB")
-	private byte[] image;
+//	@Lob
+//	@Column(columnDefinition = "LONGBLOB")
+//	private byte[] image;
 
-	public Course(String courseName, String description, String type , byte[] image) {
+	public Course(String courseName, String description, String type ) {
 		this.CourseName = courseName;
 		this.Description = description;
-		this.type = type;
-		this.image = image;
+		this.type = type;}
 		
-	}
+		
+//	}
 
-	public Course( ) {
+//	public Course( ) {
 
-	}
+//	}
 
 	public int getId() {
 		return id;
@@ -78,17 +78,17 @@ public class Course {
 		this.type = type;
 	}
 
-	public byte[] getImage() {
-		return image;
-	}
-	
-	public String getBase64() {
-		return Base64Utils.encodeToString(image);
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	
-	
+//	public byte[] getImage() {
+//		return image;
+//	}
+//	
+//	public String getBase64() {
+//		return Base64Utils.encodeToString(image);
+//	}
+//
+//	public void setImage(byte[] image) {
+//		this.image = image;
+//	}
+//	
+//	
 }
