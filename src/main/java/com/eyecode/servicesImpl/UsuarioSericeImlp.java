@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.eyecode.entities.Role;
-import com.eyecode.entities.User;
+import com.eyecode.entities.Usuario;
 import com.eyecode.repositories.UserRepository;
 import com.eyecode.services.UsuarioService;
 
@@ -26,25 +26,25 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	private UserRepository usuarioRepository;
 	
 	@Override
-	public List<User> getAllUsuarios() {
+	public List<Usuario> getAllUsuarios() {
 		return usuarioRepository.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public User getUsuarioById(Long id) {
+	public Usuario getUsuarioById(Long id) {
 	return usuarioRepository.findById (id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public User saveUsuario(User usuario) {
+	public Usuario saveUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
 
 	@Override
-	public User updateUsuario(Long id, User usuarioAtualizado) {
-		User usuarioExistente = usuarioRepository.findById(id).orElse(null);
+	public Usuario updateUsuario(Long id, Usuario usuarioAtualizado) {
+		Usuario usuarioExistente = usuarioRepository.findById(id).orElse(null);
 		if (usuarioExistente != null) {
 		usuarioExistente.setNome(usuarioAtualizado.getNome());
 		return usuarioRepository.save(usuarioExistente);
@@ -62,7 +62,7 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
-		User user = usuarioRepository.findByName(username);
+		Usuario user = usuarioRepository.findByName(username);
 		System.out.print("\n - " + user.getNome() );
 		
 		if(user != null) {
