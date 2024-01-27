@@ -17,5 +17,6 @@ function sendEmail() {
     		"message": message.value
 		})
 	})
-		
+	
+	alert ("Email Enviado");
 }
