@@ -11,22 +11,28 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinColumns;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="user")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
 	
+	@Column(name="email")
 	private String email;
 	
+	@Column(name="name")
 	private String name;
 	
+	@Column(name="password")
 	private String password;
 	
+	@Column(name="deficiency")
 	private String deficiency;
 		
 	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
