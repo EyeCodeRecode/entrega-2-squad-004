@@ -1,6 +1,6 @@
-CREATE DATABASE eyecode;
+CREATE DATABASE eyecode_yksy;
 
-use eyecode;
+use eyecode_yksy;
 
 CREATE TABLE user
 
