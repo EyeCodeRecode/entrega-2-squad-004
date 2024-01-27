@@ -45,10 +45,10 @@ public class EyecodeApplication {
 		
 		Usuario user = new Usuario();
 		
-		user.setEmail("Cristianascimento@gmail.com");
-		user.setNome("Fulano");
+		user.setEmail("eye.code.eyecode@gmail.com");
+		user.setNome("eyecode");
 		//A senha é "password"
-		user.setPassword("$2y$10$qnQvSDDAws3phToeXfLDS.fgIghxBfvnb9QcDrSDLh6blQ2zKe6K2");
+		user.setSenha("$2y$10$qnQvSDDAws3phToeXfLDS.fgIghxBfvnb9QcDrSDLh6blQ2zKe6K2");
 		user.setDeficiencia("Não possuí");
 		
 		ArrayList<Role> roles = new ArrayList<>();
