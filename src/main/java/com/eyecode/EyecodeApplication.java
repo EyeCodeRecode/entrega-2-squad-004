@@ -43,6 +43,8 @@ public class EyecodeApplication {
 	public void importSql() {
 		
 		
+		/*
+		
 		Usuario user = new Usuario();
 		
 		user.setEmail("Cristianascimento@gmail.com");
@@ -57,7 +59,7 @@ public class EyecodeApplication {
 		user.setRoles(roles);
 		
 		userRepository.save(user);
-	
+		*/
 		
 	}
 }
