@@ -34,9 +34,7 @@ public class Index {
 	public ModelAndView cursos() {
 		
 		ModelAndView page = new ModelAndView("/cursos");
-		
-		page.addObject("courses",courseRepository.findAll()); 
-		
+				
 		return page;
 	}
 	
