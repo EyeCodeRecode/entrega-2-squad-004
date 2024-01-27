@@ -20,20 +20,21 @@ import jakarta.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	@Column(name="id")
 	private Long id;
 	
 	@Column(name="email")
 	private String email;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name="nome")
+	private String nome;
 	
-	@Column(name="password")
-	private String password;
+	@Column(name="senha")
+	private String senha;
 	
-	@Column(name="deficiency")
-	private String deficiency;
+	@Column(name="deficiencia")
+	private String deficiencia;
 		
 	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role" ,
@@ -58,20 +59,20 @@ public class User {
 		this.email = email;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String senha) {
+		this.senha = senha;
 	}
 
 	
@@ -83,12 +84,12 @@ public class User {
 		this.roles = roles;
 	}
 
-	public String getDeficiency() {
-		return deficiency;
+	public String getDeficiencia() {
+		return deficiencia;
 	}
 
-	public void setDeficiency(String deficiency) {
-		this.deficiency = deficiency;
+	public void setDeficiencia(String deficiencia) {
+		this.deficiencia = deficiencia;
 	} 
 
 
