@@ -93,11 +93,12 @@ public class Index {
 	public String pagcurso6() {
 		return "pagcurso6";
 	}
-	
+
 	@GetMapping("/listarUsuarios")
 	public String lisingUser() {
 		return "ListarUsuarios";
 	}
+
 	@GetMapping("/pages-faq")
 	public String pagesfaq() {
 		return "pages-faq";
