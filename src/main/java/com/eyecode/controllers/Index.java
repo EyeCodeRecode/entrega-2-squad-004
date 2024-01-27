@@ -11,15 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.eyecode.entities.Course;
-import com.eyecode.repositories.CourseRepository;
 
 @Controller 
 public class Index {
 	
-	@Autowired
-	CourseRepository courseRepository; 
-	
+
 	@GetMapping("/home")
 	public String home() {
 		return "index";
