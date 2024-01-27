@@ -85,5 +85,34 @@ public class Index {
 	}
 	
 
+
+	@GetMapping("/listarUsuarios")
+	public String lisingUser() {
+		return "ListarUsuarios";
+	}
+
+
+	@GetMapping("/pages-faq")
+	public String pagesfaq() {
+		return "pages-faq";
+	}
+	
+	@GetMapping("/fullcalendar")
+	public String fullcalendar() {
+		return "fullcalendar";
+	}
+	
+	@GetMapping("/indexperfil")
+	public String indexperfil() {
+		return "indexperfil";
+	}
+	
+	@GetMapping("/users-profile")
+	public String usersprofile() {
+		return "users-profile";
+	}
+
+
+
 }
 
