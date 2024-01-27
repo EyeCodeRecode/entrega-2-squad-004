@@ -58,7 +58,7 @@ public class EyecodeApplication {
 		
 		user.setRoles(roles);
 		
-		if( userRepository.findByName(user.getNome()) == null ){
+		if( userRepository.findByNome(user.getNome()) == null ){
 			userRepository.save(user);
 
 		}

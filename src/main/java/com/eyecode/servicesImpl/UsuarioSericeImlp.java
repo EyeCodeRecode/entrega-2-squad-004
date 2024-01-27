@@ -62,7 +62,7 @@ public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
-		Usuario user = usuarioRepository.findByName(username);
+		Usuario user = usuarioRepository.findByNome(username);
 		System.out.print("\n - " + user.getNome() );
 		
 		if(user != null) {

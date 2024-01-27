@@ -8,6 +8,6 @@ import com.eyecode.entities.Usuario;
 @Repository
 public interface UserRepository extends JpaRepository<Usuario, Long>{
 
-	Usuario findByName(String nome);
+	Usuario findByNome(String nome);
 	
 }
