@@ -1,21 +1,26 @@
 package com.eyecode.servicesImpl;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.eyecode.entities.Role;
 import com.eyecode.entities.Usuario;
 import com.eyecode.repositories.UserRepository;
 import com.eyecode.services.UsuarioService;
 
 
-
-
-
 @Service
-public class UsuarioSericeImlp implements UsuarioService{
+public class UsuarioSericeImlp implements UsuarioService , UserDetailsService{
 
 	@Autowired
 	private UserRepository usuarioRepository;
@@ -53,5 +58,31 @@ public class UsuarioSericeImlp implements UsuarioService{
 		usuarioRepository.deleteById(id);
 		
 	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	
+		Usuario user = usuarioRepository.findByNome(username);
+		System.out.print("\n - " + user.getNome() );
+		
+		if(user != null) {
+			return new org.springframework.security.core.userdetails.User(user.getNome(), user.getSenha(),
+					mapRolesToAuthorities(user.getRoles()));
+		} else {
+			throw new UsernameNotFoundException("Usuário não encontrado");
+
+		}
+		
+	}
+	
+	
+	private Collection<? extends GrantedAuthority> mapRolesToAuthorities (Collection<Role> roles) {
+		  Collection<? extends GrantedAuthority> mapRoles = roles.stream()
+		      .map(role -> new SimpleGrantedAuthority(role.getAuthority()))
+		      .collect(Collectors.toList());
+
+		  return mapRoles;
+		}
+ 
 
 }

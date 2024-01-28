@@ -7,5 +7,5 @@ import com.eyecode.entities.Usuario;
 
 @Repository
 public interface UserRepository extends JpaRepository<Usuario, Long>{
-
+	Usuario findByNome(String nome);
 }

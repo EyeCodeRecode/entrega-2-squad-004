@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    
+    <div th:replace="~{components/header}"/>
+
+
+    <!-- BODY -->
+    <body class="modoClaro modoEscuro">
+
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top ">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="home">
+                                <h2 class="texto1">EYE.CODE</h2>
+                                
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
+                        <div class="menu-container">
+                            <ul class="navbar-nav navbar-nav-right">
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="home">Home</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="sobre">Sobre nos</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="cursos">Cursos</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="opcoes">Acessibilidades</a></li>
+                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="usuarios">STAFF</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navbar Collapse -->
+                </div>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+        <!--========== PARALLAX ==========-->
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/1920x1080/curso.png">
+            <div class="parallax-content container">
+                <h1 class="carousel-title texto ">Nossos Cursos</h1>
+                <p class="texto"></p>
+            </div>
+        </div>
+        <!--========== PARALLAX ==========-->
+
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- Our Exceptional Solutions -->
+        <div class="content-lg container">
+            <div class="row margin-b-40">
+                <div class="col-sm-6">
+                    <h2 class="texto modoClaro modoEscuro">Cursos oferecidos</h2>
+                    <p class="texto modoClaro modoEscuro">Explore cursos abrangentes, desde a criação de layouts com HTML e CSS até a implementação de interatividade com JavaScript. Avance para linguagens como Java e Python para construir sistemas robustos. Aprofunde-se na gestão eficiente de dados com cursos de Banco de Dados e explore as possibilidades do Python, do desenvolvimento web à inteligência artificial. Seja você um aspirante a desenvolvedor, nossos cursos oferecem a expertise necessária para impulsionar sua carreira no emocionante campo do desenvolvimento web.</p>
+                </div>
+            </div>
+            <!--// end row -->
+
+            <div class="row margin-b-50">
+                <!-- Our Exceptional Solutions -->
+                <div class="col-sm-4 sm-margin-b-50" th:each="course : ${courses}">
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive" th:src="@{'data:image/png;base64,'+${course.getBase64()}}" src="img/970x647/Html.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro " href="pagcurso" th:text="${course.CourseName}"> </a><span class="text-uppercase margin-l-20" th:text="${course.type}"></span></h3>
+                    <p class="texto modoClaro modoEscuro" th:text="${course.Description}" ></p>
+                    <a class="link modoClaro modoEscuro " href="pagcurso">Leia Mais</a>
+                </div>
+                <!-- End Our Exceptional Solutions -->
+
+                
+            </div>
+          
+            <!--// end row -->
+        </div>
+        <!-- End Our Exceptional Solutions -->
+
+        <!-- Clients -->
+        <div class="bg-color-sky-light modoClaro modoEscuro">
+            <div class="content-lg container">
+                <!-- Swiper Clients -->
+                <div class="swiper-slider swiper-clients">
+                    <!-- Swiper Wrapper -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="img/clients/01.png" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="img/clients/02.png" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="img/clients/03.png" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="img/clients/04.png" alt="Clients Logo">
+                        </div>
+                        
+                    </div>
+                    <!-- End Swiper Wrapper -->
+                </div>
+                <!-- End Swiper Clients -->
+            </div>
+        </div>
+        <!-- End Clients -->
+
+        
+        <!--========== END PAGE LAYOUT ==========-->
+
+       	<div th:replace="~{components/footer}"/>
+
+       
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+         <!-- Acessibilidade -->
+        <script th:src="@{/js/acessibilidade.js}" type="text/javascript"></script>
+
+
+        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
+        <script src="vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
+        <script src="vendor/jquery.easing.js" type="text/javascript"></script>
+        <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+        <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+        <script src="vendor/jquery.parallax.min.js" type="text/javascript"></script>
+        <script src="vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
+        <script src="js/layout.min.js" type="text/javascript"></script>
+        <script src="js/components/wow.min.js" type="text/javascript"></script>
+        <script src="js/components/swiper.min.js" type="text/javascript"></script>
+
+    </body>
+    <!-- END BODY -->
+</html>

@@ -39,23 +39,28 @@ public class EyecodeApplication {
 	public void importSql() {
 		
 		
-		/*
+	
 		
 		Usuario user = new Usuario();
+
+        user.setEmail("Cristianascimento@gmail.com");
+        user.setNome("Fulano");
+        //A senha é "password"
+        user.setSenha("$2y$10$qnQvSDDAws3phToeXfLDS.fgIghxBfvnb9QcDrSDLh6blQ2zKe6K2");
+        user.setDeficiencia("Não possuí");
+
+        ArrayList<Role> roles = new ArrayList<>();
+
+        roles.add(new Role("ROLE_ADMIN"));
+        roles.add(new Role("ROLE_USER"));
+
+        user.setRoles(roles);
+
+        if( userRepository.findByNome(user.getNome()) == null ){
+            userRepository.save(user);
+
+        }
 		
-		user.setEmail("Cristianascimento@gmail.com");
-		user.setNome("Cristian");
-		user.setSenha("password");
-		user.setDeficiencia("Não possuí");
-		
-		ArrayList<Role> roles = new ArrayList<>();
-		
-		roles.add(new Role("ROLE_ADMIM"));
-		
-		user.setRoles(roles);
-		
-		userRepository.save(user);
-		*/
 		
 	}
 }
