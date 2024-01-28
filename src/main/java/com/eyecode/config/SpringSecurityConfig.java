@@ -47,25 +47,19 @@ public class SpringSecurityConfig {
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       
-	
+
 		http
-        .csrf( csrf -> csrf.disable() )
-           .authorizeHttpRequests((authorize) -> authorize
-            .anyRequest()
-            .permitAll()
-        )
-           .formLogin(Customizer.withDefaults())  
-   		.logout( logout -> logout.logoutRequestMatcher( new AntPathRequestMatcher("/logout") ).permitAll() );  
-//		http
-//			.csrf( csrf -> csrf.disable() )
-//       		.authorizeHttpRequests((authorize) -> authorize	
-//                .requestMatchers("/usuarios/**")
-//                .hasRole("ADMIN")
-//                .requestMatchers("/cursos/*")
-//                .hasAnyRole("ADMIN","USER")
-//                .anyRequest()
-//                .permitAll()
-//            )
+			.csrf( csrf -> csrf.disable() )
+       		.authorizeHttpRequests((authorize) -> authorize	
+                .requestMatchers("/usuarios/**")
+                .hasRole("ADMIN")
+               .requestMatchers("/cursos/*")
+                .hasAnyRole("ADMIN","USER")
+                .anyRequest()
+                .permitAll()
+          )
+       		.formLogin(Customizer.withDefaults())  
+       		.logout( logout -> logout.logoutRequestMatcher( new AntPathRequestMatcher("/logout") ).permitAll() );  
 			
     	
     	
