@@ -27,11 +27,9 @@ public class Index {
 	}
 	
 	@GetMapping("/cursos")
-	public ModelAndView cursos() {
-		
-		ModelAndView page = new ModelAndView("/cursos");
-				
-		return page;
+	public String cursos() {
+						
+		return "cursos";
 	}
 	
 	

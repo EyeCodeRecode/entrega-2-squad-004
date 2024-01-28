@@ -53,7 +53,7 @@ public class SpringSecurityConfig {
        		.authorizeHttpRequests((authorize) -> authorize	
                 .requestMatchers("/usuarios/**")
                 .hasRole("ADMIN")
-               .requestMatchers("/cursos/*")
+                .requestMatchers("/cursos/*")
                 .hasAnyRole("ADMIN","USER")
                 .anyRequest()
                 .permitAll()
