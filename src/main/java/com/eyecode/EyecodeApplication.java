@@ -15,11 +15,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StreamUtils;
 
 import com.eyecode.entities.Contact;
-import com.eyecode.entities.Course;
 import com.eyecode.entities.Role;
 import com.eyecode.entities.Usuario;
 import com.eyecode.repositories.ContactRepository;
-import com.eyecode.repositories.CourseRepository;
 import com.eyecode.repositories.UserRepository;
 
 import jakarta.annotation.PostConstruct;
@@ -32,8 +30,6 @@ public class EyecodeApplication {
 		SpringApplication.run(EyecodeApplication.class, args);
 	}
 
-	@Autowired
-	CourseRepository repository;
 	
 	@Autowired
 	UserRepository userRepository;
@@ -42,6 +38,8 @@ public class EyecodeApplication {
 	@PostConstruct
 	public void importSql() {
 		
+		
+		/*
 		
 		Usuario user = new Usuario();
 		
@@ -57,7 +55,7 @@ public class EyecodeApplication {
 		user.setRoles(roles);
 		
 		userRepository.save(user);
-	
+		*/
 		
 	}
 }
