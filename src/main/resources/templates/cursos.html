@@ -70,16 +70,110 @@
 
             <div class="row margin-b-50">
                 <!-- Our Exceptional Solutions -->
-                <div class="col-sm-4 sm-margin-b-50" th:each="course : ${courses}">
+
+ <div class="content-lg container">
+            <div class="row margin-b-40">
+                <div class="col-sm-6">
+                    <h2 class="texto modoClaro modoEscuro">Cursos oferecidos</h2>
+                    <p class="texto modoClaro modoEscuro">Explore cursos abrangentes, desde a criação de layouts com HTML e CSS até a implementação de interatividade com JavaScript. Avance para linguagens como Java e Python para construir sistemas robustos. Aprofunde-se na gestão eficiente de dados com cursos de Banco de Dados e explore as possibilidades do Python, do desenvolvimento web à inteligência artificial. Seja você um aspirante a desenvolvedor, nossos cursos oferecem a expertise necessária para impulsionar sua carreira no emocionante campo do desenvolvimento web.</p>
+                </div>
+            </div>
+            <!--// end row -->
+
+            <div class="row margin-b-50">
+                <!-- Our Exceptional Solutions -->
+                <div class="col-sm-4 sm-margin-b-50" >
                     <div class="margin-b-20">
                         <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                            <img class="img-responsive" th:src="@{'data:image/png;base64,'+${course.getBase64()}}" src="img/970x647/Html.png" alt="Our Exceptional Solutions Image">
+                            <img class="img-responsive"  src="img/970x647/Html.png" alt="Our Exceptional Solutions Image">
                         </div>
                     </div>
-                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro " href="pagcurso" th:text="${course.CourseName}"> </a><span class="text-uppercase margin-l-20" th:text="${course.type}"></span></h3>
-                    <p class="texto modoClaro modoEscuro" th:text="${course.Description}" ></p>
-                    <a class="link modoClaro modoEscuro " href="pagcurso">Leia Mais</a>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" >HTML </a><span class="text-uppercase margin-l-20">ESTRUTURA</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						É a linguagem de marcação padrão para a criação de páginas web. 
+						Utilizada para estruturar o conteúdo das páginas, define elementos 
+						como títulos, parágrafos, links, imagens, entre outros.
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
                 </div>
+                
+                <div class="col-sm-4 sm-margin-b-50" >
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive"  src="img/970x647/Css.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" >CSS</a><span class="text-uppercase margin-l-20">ESTILO</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						É uma linguagem de estilo utilizada para definir a apresentação 
+						e o layout das páginas web. Permite estilizar elementos HTML, 
+						controlando cores, fontes, margens, posicionamento, entre outros.
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
+                </div>                
+                
+                
+                <div class="col-sm-4 sm-margin-b-50" >
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive"  src="img/970x647/js.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" >JAVASCRIPT </a><span class="text-uppercase margin-l-20">INTERATIVIDADE</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						É uma linguagem de programação de alto nível, amplamente utilizada 
+						no desenvolvimento web para criar interatividade e dinamismo nas páginas.
+						Executada no navegador do usuário, possibilita manipular elementos da página e 
+						responder a eventos.
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
+                </div>
+                
+               <div class="col-sm-4 sm-margin-b-50" >
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive"  src="img/970x647/java.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" >JAVA </a><span class="text-uppercase margin-l-20">VERSATILIDADE</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						É uma linguagem de programação versátil e robusta, frequentemente utilizada no 
+						desenvolvimento de aplicações corporativas, sistemas web e móveis. Conhecida por 
+						ser orientada a objetos e pela portabilidade, pode ser executada em diferentes plataformas.,
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
+                </div>
+                
+               <div class="col-sm-4 sm-margin-b-50" >
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive"  src="img/970x647/bd.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" > Banco de dados</a><span class="text-uppercase margin-l-20">ARMAZENAMENTO</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						Refere-se a sistemas de gerenciamento de dados, onde informações são armazenadas de forma estruturada. 
+						Utilizado para armazenar, organizar e recuperar dados em aplicações, com exemplos como MySQL, 
+						PostgreSQL e Oracle.
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
+                </div>
+                
+                <div class="col-sm-4 sm-margin-b-50" >
+                    <div class="margin-b-20">
+                        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive"  src="img/970x647/phyton.png" alt="Our Exceptional Solutions Image">
+                        </div>
+                    </div>
+                    <h3 class="texto modoClaro modoEscuro"><a class="modoClaro modoEscuro" href="/users-profile" > Pyton</a><span class="text-uppercase margin-l-20">VERSÁTIL</span></h3>
+                    <p class="texto modoClaro modoEscuro" >
+						É uma linguagem de programação de alto nível, conhecida por sua simplicidade e 
+						legibilidade. Amplamente utilizada em diversas áreas, incluindo desenvolvimento web, 
+						ciência de dados, automação, inteligência artificial, entre outros.
+					</p>
+                    <a class="link modoClaro modoEscuro" href="/users-profile">Leia Mais</a>
+                </div>
+
                 <!-- End Our Exceptional Solutions -->
 
                 
